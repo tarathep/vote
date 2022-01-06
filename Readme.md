@@ -1,4 +1,7 @@
 # Vote App
+example microservice vote app 
+
+![img](/ex-vote.svg)
 
 ## Initial Project
 
