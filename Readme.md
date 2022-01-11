@@ -3,9 +3,17 @@ example microservice vote app
 
 ![img](/ex-vote.svg)
 
+## Prerequisites
+- [Python v.3.x](https://www.python.org/) has installed
+- Redis running default port : 6379
+  
+  command to install using docker
+  ```bash
+  docker run -it --rm --name redis -p 6379:6379 redis:alpine
+  ```
+
 ## Initial Project
 
-- Install Python
 - Init files
   - app.py
   - static
@@ -62,4 +70,29 @@ coverage report
 Export HTML Report
 ```bash
 coverage html
+```
+
+
+## Configurations
+
+|Env Variables|Default|Example|
+|---|---|---|
+|REDIS_CONNECTION|redis|127.0.0.1|
+|OPTION_A|cat|teamA|
+|OPTION_B|dog|teamB|
+
+
+
+
+## Docker
+
+Build Image
+
+```
+docker build -t vote:0.0.1 .
+```
+Run Container Image
+
+```
+docker run -it --rm --name vote -p 80:80 -e REDIS_CONNECTION=192.168.1.102 vote:0.0.1
 ```
